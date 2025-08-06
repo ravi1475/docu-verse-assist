@@ -3,10 +3,10 @@ import {
   FileText, 
   MessageSquare, 
   FileEdit, 
-  Globe, 
   Settings,
   Zap,
-  Brain
+  Brain,
+  File
 } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -34,7 +34,8 @@ const navigation = [
   {
     title: "Documents",
     items: [
-      { title: "My Documents", url: "/documents", icon: FileText },
+      { title: "Upload Documents", url: "/documents", icon: FileText },
+      { title: "My Documents", url: "/my-documents", icon: File },
       { title: "Document Generator", url: "/generator", icon: FileEdit },
       { title: "Templates", url: "/templates", icon: Zap },
     ]
@@ -42,7 +43,6 @@ const navigation = [
   {
     title: "Workspace",
     items: [
-      { title: "Integrations", url: "/integrations", icon: Globe },
       { title: "Settings", url: "/settings", icon: Settings },
     ]
   }

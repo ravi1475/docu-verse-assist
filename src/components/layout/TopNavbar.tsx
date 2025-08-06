@@ -28,12 +28,16 @@ const languages = [
 ];
 
 export function TopNavbar() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(
+    document.documentElement.classList.contains("dark")
+  );
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.documentElement.classList.toggle("dark", newDarkMode);
+    localStorage.setItem("theme", newDarkMode ? "dark" : "light");
   };
 
   return (
@@ -95,10 +99,10 @@ export function TopNavbar() {
               <Avatar className="w-8 h-8">
                 <AvatarImage src="" />
                 <AvatarFallback className="bg-gradient-ai text-white text-sm">
-                  JD
+                  KS
                 </AvatarFallback>
               </Avatar>
-              <span className="hidden sm:inline font-medium">John Doe</span>
+              <span className="hidden sm:inline font-medium">Kunal</span>
               <ChevronDown className="w-3 h-3" />
             </Button>
           </DropdownMenuTrigger>
